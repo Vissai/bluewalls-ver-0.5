@@ -1,5 +1,6 @@
 .modal.show .modal-dialog {
   margin: 0 auto;
+  transform: translate(-20px, 10px) !important;
 }
 
 .modal-lg {

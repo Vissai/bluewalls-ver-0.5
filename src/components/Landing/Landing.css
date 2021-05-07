@@ -1,11 +1,11 @@
 .landing-wrap {
   background-color: #2c73d2;
-  height: 100vh;
+  height: 75vh;
 }
 
 .main-wrap {
   color: #eee;
-  height: 750px;
+  height: 450px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -29,14 +29,14 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 70px;
   position: relative;
+  margin-top: 70px;
 }
 
 .play {
   cursor: pointer;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   background: #fff;
   border-radius: 50%;
   transition: 0.5s all ease;
@@ -56,4 +56,72 @@
 .hover {
   box-shadow: 0 15px 30px 0 rgb(0 0 0 / 20%);
   top: -4px;
+}
+
+.text-landing-wrap {
+  color: #fff;
+  height: 720px;
+  box-shadow: 0 15px 30px 0 rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  position: relative;
+  background-image: linear-gradient(rgba(44, 115, 210, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./land_bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-text {
+  text-align: center;
+  color: #000;
+  padding: 30px;
+  position: absolute;
+  width: 40%;
+  height: 60%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid #000;
+  top: 20%;
+  left: 5%;
+}
+
+.hero-text h2 {
+  font-weight: 300;
+}
+
+.hero-text img {
+  width: 130px;
+}
+
+.start-text {
+  color: #000;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  width: 40%;
+  height: 60%;
+  padding: 30px;
+  right: 5%;
+  top: 20%;
+  border: 3px solid #000;
+}
+
+.start-text Button {
+  position: aboslute;
+  bottom: 0;
+  margin-top: 10px;
+}
+
+.achievements-wrap {
+  text-align: center;
+}
+
+.achievements-main {
+  margin: 70px 0px;
+}
+
+.number-text {
+  margin: 50px 0;
+}
+
+.filler-text h3 {
+  font-weight: 300;
+  margin-bottom: 30px;
 }
