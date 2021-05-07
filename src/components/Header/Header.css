@@ -1,0 +1,19 @@
+.navbar {
+  background-color: #fff;
+}
+
+.nav-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.brand-wrap img {
+  height: 50px;
+  width: auto;
+}
