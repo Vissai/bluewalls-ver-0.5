@@ -2,3 +2,58 @@
   background-color: #2c73d2;
   height: 100vh;
 }
+
+.main-wrap {
+  color: #eee;
+  height: 750px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-wrap h1 {
+  font-weight: 300;
+  letter-spacing: 1.1px;
+  margin-bottom: 20px;
+}
+
+.main-wrap h2 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.play-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 70px;
+  position: relative;
+}
+
+.play {
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.5s all ease;
+  position: relative;
+  color: #000;
+  position: absolute;
+}
+
+.fa-play {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+}
+
+.hover {
+  box-shadow: 0 15px 30px 0 rgb(0 0 0 / 20%);
+  top: -4px;
+}
