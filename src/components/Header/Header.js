@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <Navbar>
             <Container>
-                <div className='nav-wrap w-100 m-3'>
+                <div className='nav-wrap w-100 m-2'>
                     <div className='brand-wrap'><img src='/assets/images/bluewallslogo_main.png' alt='mainlogo'/></div>
                     <div className='navbar-group'>
                         <div className='mx-1'><InputGroup size='sm'><FormControl placeholder='Username' /></InputGroup></div>
