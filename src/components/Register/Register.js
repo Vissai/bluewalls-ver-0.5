@@ -17,20 +17,19 @@ export default class Register extends Component {
 
     changehandler = (e) => {
         this.setState({
-            [e.target.id]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
     submitHandler = (e) => {
         e.preventDefault();
-        this.setState({
-            ...this.state,
-            [e.target.name]: e.target.value
-        })
-        console.log(this.state);
+        console.log(this.state)
     }
 
     render() {
+
+        const {email, phone, password, confirmPassword} = this.state
+
         return (
             <div className='register-main'>
                 <Container>
@@ -45,21 +44,21 @@ export default class Register extends Component {
                                 <div className='d-flex w-100'>
                                     <Form.Group>
                                         <Form.Label>Email Address</Form.Label>
-                                        <Form.Control name='email' type='email'/>
+                                        <Form.Control name='email' type='email' value={email} onChange={this.changehandler}/>
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Label>Phone Number</Form.Label>
-                                        <Form.Control name='phone' type='number'/>
+                                        <Form.Control name='phone' type='number' value={phone} onChange={this.changehandler}/>
                                     </Form.Group>
                                 </div>
                                 <div className='d-flex w-100'>
                                     <Form.Group>
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control name='password' type='password'/>
+                                        <Form.Control name='password' type='password' value={password} onChange={this.changehandler}/>
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Label>Confirm Password</Form.Label>
-                                        <Form.Control name='confirmPassword' type='password'/>
+                                        <Form.Control name='confirmPassword' type='password' value={confirmPassword} onChange={this.changehandler}/>
                                     </Form.Group>
                                 </div>
                                     <Form.Group className='d-flex flex-row'>

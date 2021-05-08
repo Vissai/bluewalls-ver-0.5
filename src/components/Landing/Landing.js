@@ -63,7 +63,7 @@ export default class Landing extends Component {
                                 <div className='start-text d-flex flex-column justify-content-around text-center'>
                                     <h2>Get Started</h2>
                                     <p>Hurry up, your just steps away, from finding your perfect home</p>
-                                    <Link to ='/register'><Button>Sign Up</Button></Link>
+                                    <Link to ='/register'><Button className='w-100' block>Sign Up</Button></Link>
                                 </div>
                             </div>
                         </div>
