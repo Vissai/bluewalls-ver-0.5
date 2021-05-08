@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import YoutubeModal from '../YoutubeModal/YoutubeModal';
 
@@ -55,14 +56,14 @@ export default class Landing extends Component {
                                 <div className='hero-text d-flex flex-column justify-content-around align-items-center'>
                                     <h2>Welcome to Bluewalls</h2>
                                     <img src='/assets/images/favicon.png' alt=' img_alt'/>
-                                    <h5>Your dream home avaits</h5>
+                                    <h5>Your dream home awaits</h5>
                                 </div>
                             </div>
                             <div className='start-wrap'>
-                                <div className='start-text d-flex flex-column justify-content-around'>
+                                <div className='start-text d-flex flex-column justify-content-around text-center'>
                                     <h2>Get Started</h2>
                                     <p>Hurry up, your just steps away, from finding your perfect home</p>
-                                    <Button>Sign Up</Button>
+                                    <Link to ='/register'><Button>Sign Up</Button></Link>
                                 </div>
                             </div>
                         </div>

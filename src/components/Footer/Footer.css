@@ -6,3 +6,23 @@
 .footer-main {
   width: 30%;
 }
+
+.footer-main a {
+  text-decoration: none;
+  color: #fff;
+  padding-right: 20px;
+}
+
+.footer-main a:hover {
+  color: #ccc;
+}
+
+.footer-icons a {
+  text-decoration: none;
+  color: #fff;
+  padding-right: 10px;
+}
+
+.footer-icons a:hover {
+  color: #ccc;
+}
