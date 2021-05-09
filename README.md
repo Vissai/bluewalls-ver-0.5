@@ -6,11 +6,17 @@
 - [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/) - `npm i react-bootstrap bootstrap`
 - [React Player](https://www.npmjs.com/package/react-player) = `npm i react-player`
 - [Firebase](https://www.npmjs.com/package/firebase) - `npm i firebase`
+- [Redux](https://redux.js.org/introduction/getting-started) - `npm i redux`
+- [React Redux](https://react-redux.js.org/introduction/getting-started) - `npm i react-redux`
+- [Redux Thunk](https://www.npmjs.com/package/redux-thunk) - `npm i redux-thunk`
+- [React Redux Firebase](https://www.npmjs.com/package/react-redux-firebase) - `npm i react-redux-firebase`
+- [Redux Firestore](https://www.npmjs.com/package/redux-firestore) - `npm i redux-firestore`
 - [md5](https://www.npmjs.com/package/md5) - `npm i md5`
 
 ### Misc Notes
 
 - Bootstrap: Stylesheet import in App.js `import 'bootstrap/dist/css/bootstrap.min.css';`
+- Font Awesome import `<script src="https://kit.fontawesome.com/fc31dedf63.js" crossorigin="anonymous">`
 - Firebase Config File:
 
   ```js

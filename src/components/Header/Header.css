@@ -18,3 +18,41 @@
   height: 50px;
   width: auto;
 }
+
+.profile-pic {
+  position: relative;
+}
+
+.profile-pic img {
+  width: 35px;
+}
+
+.log-menu {
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  height: 110px;
+  width: 170px;
+  text-align: center;
+  color: #000;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  user-select: none;
+}
+
+.fa-user-alt {
+  cursor: pointer;
+  border: 1px solid #2c73d2;
+  padding: 10px;
+  border-radius: 50%;
+  color: #2c73d2;
+}
+
+.log-menu p {
+  color: #2c73d2;
+  cursor: pointer;
+}

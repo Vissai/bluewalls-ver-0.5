@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Form, Button, Alert, Spinner } from 'react-bootstrap';
-import firebase from '../../firebase';
-import md5 from 'md5'
+import { connect } from 'react-redux';
+import { register } from '../../store/Action/AuthActions'
 
 import './Register.css'
 
-export default class Register extends Component {
+class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -78,26 +78,27 @@ export default class Register extends Component {
     submitHandler = (e) => {
         e.preventDefault();
         if(this.isFormValid()) {
-            this.setState({ errors:[], loading: true});
-            firebase
-                .auth()
-                .createUserWithEmailAndPassword(this.state.email, this.state.password)
-                .then(createdUser => {
-                    console.log(createdUser)
-                    createdUser.user.updateProfile({
-                        displayName: this.state.email,
-                        photoURL: `http://gravatar.com/avatar/${md5(createdUser.user.email)}?d=identicon`
-                    }).then(() => {
-                        this.setState({ loading: false });
-                    }).catch((error) => {
-                        console.log(error)
-                        this.setState({ errors: this.state.errors.concat(error), loading: false })
-                    })
-                })
-                .catch(error => {
-                    console.error(error);
-                    this.setState({ errors: this.state.errors.concat(error), loading: false })
-                });
+            // this.setState({ errors:[], loading: true});
+            // firebase
+            //     .auth()
+            //     .createUserWithEmailAndPassword(this.state.email, this.state.password)
+            //     .then(createdUser => {
+            //         console.log(createdUser)
+            //         createdUser.user.updateProfile({
+            //             displayName: this.state.email,
+            //             photoURL: `http://gravatar.com/avatar/${md5(createdUser.user.email)}?d=identicon`
+            //         }).then(() => {
+            //             this.setState({ loading: false });
+            //         }).catch((error) => {
+            //             console.log(error)
+            //             this.setState({ errors: this.state.errors.concat(error), loading: false })
+            //         })
+            //     })
+            //     .catch(error => {
+            //         console.error(error);
+            //         this.setState({ errors: this.state.errors.concat(error), loading: false })
+            //     });
+            this.props.register(this.state)
             }
     }
 
@@ -158,3 +159,19 @@ export default class Register extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError,
+        auth: state.firebase.auth
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        register: (credentials) => dispatch(register(credentials))
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register)
