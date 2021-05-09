@@ -61,4 +61,5 @@ input[type='number']::-webkit-outer-spin-button {
 
 .register-form button {
   margin-left: 20px;
+  width: 120px;
 }
