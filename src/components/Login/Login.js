@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
-export default class Register extends Component {
+import { emailAuth } from '../../store/Action/AuthActions'
+
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,6 +15,7 @@ export default class Register extends Component {
     }
 
     changehandler = (e) => {
+        e.preventDefault();
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -19,12 +23,16 @@ export default class Register extends Component {
 
     submitHandler = (e) => {
         e.preventDefault();
-        console.log(this.state)
+        this.props.login(this.state);
     }
 
     render() {
 
         const {email, password } = this.state
+
+        const { auth } = this.props;
+
+        if(auth.uid) return <Redirect to='/options' />
 
         return (
             <div className='register-main'>
@@ -55,3 +63,18 @@ export default class Register extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError,
+        auth: state.firebase.auth
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        login: (credentials) => dispatch(emailAuth(credentials))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

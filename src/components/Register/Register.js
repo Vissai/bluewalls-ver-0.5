@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Button, Alert, Spinner } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { register } from '../../store/Action/AuthActions'
@@ -107,6 +107,8 @@ class Register extends Component {
     render() {
 
         const {email, phone, password, confirmPassword, errors, loading} = this.state
+
+        if(this.props.auth.uid) return <Redirect to='/options' />
 
         return (
             <div className='register-main'>

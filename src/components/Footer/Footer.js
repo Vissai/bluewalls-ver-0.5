@@ -14,11 +14,11 @@ const Footer = () => {
                         <span><a href='/home'>Terms & Conditions</a></span><span><a href='/home'>Privacy Policy</a></span>
                     </div>
                     <div>
-                        <div className='footer-icons my-5 d-flex'>
-                            <div><a href='/home'>Facebook</a></div>
-                            <div><a href='/home'>Instagram</a></div>
-                            <div><a href='/home'>LinkendIn</a></div>
-                            <div><a href='/home'>Twitter</a></div>
+                        <div className='footer-icons my-5 d-flex justify-content-center m-5'>
+                            <div className='icons-wrap m-3'><a href='/home'><i class="fab fa-facebook-f"></i></a></div>
+                            <div className='icons-wrap m-3'><a href='/home'><i class="fab fa-instagram"></i></a></div>
+                            <div className='icons-wrap m-3'><a href='/home'><i class="fab fa-linkedin-in"></i></a></div>
+                            <div className='icons-wrap m-3'><a href='/home'><i class="fab fa-twitter"></i></a></div>
                         </div>
                     </div>
                 </div>

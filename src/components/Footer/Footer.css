@@ -26,3 +26,7 @@
 .footer-icons a:hover {
   color: #ccc;
 }
+
+.icons-wrap {
+  font-size: 25px;
+}

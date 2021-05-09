@@ -29,7 +29,7 @@ export default class Landing extends Component {
         this.setState({ modalShow: false })
     }
 
-    render() {
+    render() {        
         return (
             <div className='landing-wrap w-100'>
                 <Container>
