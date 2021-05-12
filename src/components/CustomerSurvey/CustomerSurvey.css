@@ -1,0 +1,33 @@
+.customer-survey-wrap {
+  background: #eee;
+  height: 91vh;
+}
+
+.customer-main {
+  background: #fff;
+  border-radius: 10px;
+  height: auto;
+  margin-bottom: 20px;
+  box-shadow: 0 15px 30px 0 rgb(0 0 0 / 20%);
+  padding: 20px;
+}
+
+.form-one-wrap {
+  border-right: 1px solid #ccc;
+}
+
+.back-link a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.back-link a:hover {
+  color: #ccc;
+}
+
+.fa-chevron-left {
+  margin-right: 10px;
+  font-size: 16px;
+}
