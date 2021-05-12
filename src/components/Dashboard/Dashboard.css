@@ -1,0 +1,76 @@
+.dashboard-nav-wrap {
+  width: 250px;
+  background-color: #2e6ab9;
+  color: #fff;
+  height: 91.4vh;
+  box-shadow: 0 15px 30px 0 rgb(0 0 0 / 50%);
+}
+
+.dash-pic {
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #1b467e;
+}
+
+.dash-pic img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.dash-options {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.dash-options:hover {
+  background-color: #1b467e;
+}
+
+.dash-survey-wrap {
+  padding: 50px;
+}
+
+.dash-survey-wrap .card {
+  position: relative;
+  text-align: center;
+  width: 250px;
+  height: auto;
+  margin-right: 10px;
+  margin-top: 40px;
+  box-shadow: 0 15px 30px 0 rgb(0 0 0 / 20%);
+}
+
+.dash-survey-type-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  background-color: #2e6ab9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -20px;
+  left: 20px;
+}
+
+.dash-survey-location {
+  margin-top: 40px;
+}
+
+.dash-survey-type {
+  margin-bottom: 20px;
+}
+
+.payment-btn {
+  width: 130px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.redirect-options {
+  font-size: 60px;
+  margin-left: 30px;
+}

@@ -16,9 +16,11 @@ class CustomerSurvey extends Component {
             circle: '',
             rooms: '',
             area: '',
-            checked: [],
+            apartmentType: [],
+            additionalOptions: [],
             preference: '',
-            surveyType: 'customer'
+            surveyType: 'customer',
+            paymentStatus: false,
         }
     }
 
@@ -29,17 +31,33 @@ class CustomerSurvey extends Component {
         console.log(this.state);
     }
 
-    checkHandler = (e) => {
+    apartmentTypeCheckHandler = (e) => {
         if (e.target.checked) {
             this.setState({
                 ...this.state,
-                checked: [...this.state.checked, e.target.name]
+                apartmentType: [...this.state.apartmentType, e.target.name]
             })
         } else {
-            const checked = this.state.checked.filter(obj => obj !== e.target.name)
+            const checked = this.state.apartmentType.filter(obj => obj !== e.target.name)
             this.setState({
                 ...this.state,
-                checked: checked
+                apartmentType: checked
+            })
+        }
+    
+    }
+
+    additionalOptionsCheckhandler = (e) => {
+        if (e.target.checked) {
+            this.setState({
+                ...this.state,
+                additionalOptions: [...this.state.additionalOptions, e.target.name]
+            })
+        } else {
+            const checked = this.state.additionalOptions.filter(obj => obj !== e.target.name)
+            this.setState({
+                ...this.state,
+                additionalOptions: checked
             })
         }
     
@@ -93,16 +111,16 @@ class CustomerSurvey extends Component {
                                     <Form.Group>
                                         <Form.Label>Aparment Type</Form.Label>
                                         <div className='d-flex flex-wrap justify-content-between mb-4'>
-                                            <Form.Check type="checkbox" label="Basement" name="basement" value={this.basement} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Ground Floor" name="goundFloor" value={this.groundFloor} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Mezzanine Floor" name="mezzanineFloor" value={this.mezzanineFloor} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Flat" name="flat" value={this.flat} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Loft" name="loft" value={this.loft} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Maisonette" name="maisonette" value={this.maisonette} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Terrace Apartment" name='terraceAppartment' value={this.terraceApartment} onChange={this.checkHandler} className='m-2' />
-                                            <Form.Check type="checkbox" label="Penthouse" name="penthouse" value={this.penthouse} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Attic" name="attic" value={this.attic} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Other" name="other" value={this.other} onChange={this.checkHandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Basement" name="basement" value={this.basement} onChange={this.apartmentTypeCheckHandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Ground Floor" name="goundFloor" value={this.groundFloor} onChange={this.apartmentTypeCheckHandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Mezzanine Floor" name="mezzanineFloor" value={this.mezzanineFloor} onChange={this.apartmentTypeCheckHandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Flat" name="flat" value={this.flat} onChange={this.apartmentTypeCheckHandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Loft" name="loft" value={this.loft} onChange={this.apartmentTypeCheckHandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Maisonette" name="maisonette" value={this.maisonette} onChange={this.apartmentTypeCheckHandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Terrace Apartment" name='terraceAppartment' value={this.terraceApartment} onChange={this.apartmentTypeCheckHandler} className='m-2' />
+                                            <Form.Check type="checkbox" label="Penthouse" name="penthouse" value={this.penthouse} onChange={this.apartmentTypeCheckHandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Attic" name="attic" value={this.attic} onChange={this.apartmentTypeCheckHandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Other" name="other" value={this.other} onChange={this.apartmentTypeCheckHandler} className='m-2 w-150px' />
                                         </div>
                                     </Form.Group>
                                     <Button type='submit'>Submit</Button>
@@ -116,12 +134,12 @@ class CustomerSurvey extends Component {
                                 <Form.Group>
                                         <Form.Label>Additional Options</Form.Label>
                                         <Form.Group className='d-flex flex-wrap justify-content-between'>
-                                            <Form.Check type="checkbox" label="Garage" name='garage' value={this.garage} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Equipped Kitchen" name='equipedKitchen' value={this.equipedKitchen} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Passenger Elevator" name='passengerElevator' value={this.passengerElevator} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Basement" name='cellar' value={this.cellar} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Basement" name='basement' value={this.cellar} onChange={this.checkHandler} className='m-2 w-150px' />
-                                            <Form.Check type="checkbox" label="Guest Toilet" name='guestToilet' value={this.guestToilet} onChange={this.checkHandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Garage" name='garage' value={this.garage} onChange={this.additionalOptionsCheckhandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Equipped Kitchen" name='equipedKitchen' value={this.equipedKitchen} onChange={this.additionalOptionsCheckhandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Passenger Elevator" name='passengerElevator' value={this.passengerElevator} onChange={this.additionalOptionsCheckhandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Basement" name='cellar' value={this.cellar} onChange={this.additionalOptionsCheckhandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Basement" name='basement' value={this.cellar} onChange={this.additionalOptionsCheckhandler} className='m-2 w-150px' />
+                                            <Form.Check type="checkbox" label="Guest Toilet" name='guestToilet' value={this.guestToilet} onChange={this.additionalOptionsCheckhandler} className='m-2 w-150px' />
                                         </Form.Group>
                                     </Form.Group>
                             </Col>
