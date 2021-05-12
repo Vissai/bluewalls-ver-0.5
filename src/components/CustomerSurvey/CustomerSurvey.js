@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Form, InputGroup, Button, FormControl } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, FormControl } from 'react-bootstrap';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -64,47 +64,35 @@ class CustomerSurvey extends Component {
                     <div className='customer-main'>
                         <Row>
                             <Col className='form-one-wrap'>
-                                <div className='back-link'><Link to='/options'><i className="fas fa-chevron-left"></i>Go Back</Link></div>
+                                <div className='back-link mb-5'><Link to='/options'><i className="fas fa-chevron-left"></i>Go Back</Link></div>
                                 <Form onSubmit={this.submitHandler}>
                                     <Form.Group className='d-flex flex-row justify-content-between'>
-                                        <div>
+                                        <div className='form-first-text'>
                                             <Form.Label>Enter the location</Form.Label>
                                             <Form.Control type='text' name='location' onChange={this.changeHandler}></Form.Control>
                                         </div>
-                                        <div>
+                                        <div className='form-first-text'>
                                             <Form.Label>Enter the city</Form.Label>
                                             <Form.Control type='text' name='location' onChange={this.changeHandler}></Form.Control>
                                         </div>
                                     </Form.Group>
-                                    <Form.Group className='d-flex flex-row justify-content-around align-items-center'> 
-                                        <div>
+                                    <Form.Group className='d-flex flex-row justify-content-between align-items-center'> 
+                                        <div className= 'form-number'>
                                             <Form.Label>Circle</Form.Label>
-                                            <InputGroup>
-                                                <InputGroup.Prepend><Button variant="outline-secondary" size='sm'>-</Button></InputGroup.Prepend>
                                                 <FormControl name='circle' size='sm' type='number' onChange={this.changeHandler}/>
-                                                <InputGroup.Append><Button variant="outline-secondary" size='sm'>+</Button></InputGroup.Append>
-                                            </InputGroup>
                                         </div>
-                                        <div>
+                                        <div className= 'form-number'>
                                             <Form.Label>Rooms</Form.Label>
-                                            <InputGroup>
-                                                <InputGroup.Prepend><Button variant="outline-secondary" size='sm'>-</Button></InputGroup.Prepend>
                                                 <FormControl name='circle' size='sm' type='number' onChange={this.changeHandler}/>
-                                                <InputGroup.Append><Button variant="outline-secondary" size='sm'>+</Button></InputGroup.Append>
-                                            </InputGroup>
                                         </div>
-                                        <div>
+                                        <div className= 'form-number'>
                                             <Form.Label>Area</Form.Label>
-                                            <InputGroup>
-                                                <InputGroup.Prepend><Button variant="outline-secondary" size='sm'>-</Button></InputGroup.Prepend>
                                                 <FormControl name='circle' size='sm' type='number' onChange={this.changeHandler}/>
-                                                <InputGroup.Append><Button variant="outline-secondary" size='sm'>+</Button></InputGroup.Append>
-                                            </InputGroup>
                                         </div>
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Label>Aparment Type</Form.Label>
-                                        <div className='d-flex flex-wrap justify-content-between'>
+                                        <div className='d-flex flex-wrap justify-content-between mb-4'>
                                             <Form.Check type="checkbox" label="Basement" name="basement" value={this.basement} onChange={this.checkHandler} className='m-2 w-150px' />
                                             <Form.Check type="checkbox" label="Ground Floor" name="goundFloor" value={this.groundFloor} onChange={this.checkHandler} className='m-2 w-150px' />
                                             <Form.Check type="checkbox" label="Mezzanine Floor" name="mezzanineFloor" value={this.mezzanineFloor} onChange={this.checkHandler} className='m-2 w-150px' />
@@ -121,8 +109,7 @@ class CustomerSurvey extends Component {
                                 </Form>
                             </Col>
                             <Col>
-                                <div>Would you provide us more information, this will help us immensely</div>
-                                <Form.Group>
+                                <Form.Group className='my-5'>
                                     <Form.Label>Any Other prefernces</Form.Label>
                                     <Form.Control as='textarea' name='preference' onChange={this.changeHandler} />
                                 </Form.Group>

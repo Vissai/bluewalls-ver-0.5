@@ -15,10 +15,10 @@ const Footer = () => {
                     </div>
                     <div>
                         <div className='footer-icons my-5 d-flex justify-content-center m-5'>
-                            <div className='icons-wrap m-3'><a href='/home'><i class="fab fa-facebook-f"></i></a></div>
-                            <div className='icons-wrap m-3'><a href='/home'><i class="fab fa-instagram"></i></a></div>
-                            <div className='icons-wrap m-3'><a href='/home'><i class="fab fa-linkedin-in"></i></a></div>
-                            <div className='icons-wrap m-3'><a href='/home'><i class="fab fa-twitter"></i></a></div>
+                            <div className='icons-wrap m-3'><a href='/home'><i className="fab fa-facebook-f"></i></a></div>
+                            <div className='icons-wrap m-3'><a href='/home'><i className="fab fa-instagram"></i></a></div>
+                            <div className='icons-wrap m-3'><a href='/home'><i className="fab fa-linkedin-in"></i></a></div>
+                            <div className='icons-wrap m-3'><a href='/home'><i className="fab fa-twitter"></i></a></div>
                         </div>
                     </div>
                 </div>
