@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Card, Button } from 'react-bootstrap';
+import { Container, Card, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
@@ -68,8 +68,46 @@ class Dashboard extends Component {
                         }
                         {
                             this.state.display === 'profile' &&
-                            <div>
-                                Profile
+                            <div className='w-100'>
+                                <div className='profile-form-wrap d-flex flex-column justify-content-center align-items-cente'>
+                                    <Container>
+                                        <Form>
+                                            <h4>Build your profile</h4>
+                                            <p>This information will let us know more about you</p>
+                                            <div className='d-flex w-100'>
+                                            <Form.Group>
+                                                <Form.Label>Email Address</Form.Label>
+                                                <Form.Control name='email' type='email' value={this.props.profile[0].email} />
+                                            </Form.Group>
+                                            <Form.Group>
+                                                <Form.Label>Phone Number</Form.Label>
+                                                <Form.Control name='phone' type='number' value={this.props.profile[0].phone} />
+                                            </Form.Group>
+                                        </div>
+                                        <div className='d-flex w-100'>
+                                            <Form.Group>
+                                                <Form.Label>First Name</Form.Label>
+                                                <Form.Control name='fname' type='text' value={this.props.profile[0].fname} />
+                                            </Form.Group>
+                                            <Form.Group>
+                                                <Form.Label>Last Name</Form.Label>
+                                                <Form.Control name='lname' type='text' value={this.props.profile[0].lname} />
+                                            </Form.Group>
+                                        </div>
+                                        <div className='d-flex w-100'>
+                                            <Form.Group>
+                                                <Form.Label>Password</Form.Label>
+                                                <Form.Control name='password' type='password' value={this.props.profile[0].password} />
+                                            </Form.Group>
+                                            <Form.Group>
+                                                <Form.Label>Confirm Password</Form.Label>
+                                                <Form.Control name='confirmPassword' type='password' value={this.props.profile[0].confirmPassword} />
+                                            </Form.Group>
+                                        </div>
+                                        <Button>Update</Button>
+                                        </Form>
+                                    </Container>
+                                </div>
                             </div>
                         }
                     </div>
