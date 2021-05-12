@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Form, InputGroup, Button, FormControl } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { surveySubmit } from '../../store/Action/SurveyActions';
+
 import './CustomerSurvey.css'
 
 class CustomerSurvey extends Component {
@@ -20,7 +24,9 @@ class CustomerSurvey extends Component {
 
     submitHandler = (e) => {
         e.preventDefault();
-        console.log(this.state)
+        this.props.customerSurveySubmit(this.state);
+        this.props.history.push('/dashboard');
+        console.log(this.state);
     }
 
     checkHandler = (e) => {
@@ -47,6 +53,11 @@ class CustomerSurvey extends Component {
     }
 
     render() {
+
+        const { auth } = this.props;
+
+        if (!auth.uid) return <Redirect to='/signin' />
+
         return (
             <div className='customer-survey-wrap d-flex justify-content-center align-items-center'>
                 <Container>
@@ -135,4 +146,16 @@ class CustomerSurvey extends Component {
     }
 }
 
-export default CustomerSurvey;
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        customerSurveySubmit: (survey) => dispatch(surveySubmit(survey))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CustomerSurvey))
